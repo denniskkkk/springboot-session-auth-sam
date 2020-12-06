@@ -7,4 +7,8 @@ public class IndexService {
 		public String index() {
 			return "index page";
 		}
+		
+		public String words() {
+			return "words.....";
+		}
 }

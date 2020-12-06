@@ -1,4 +1,6 @@
-package dbx.zzzz.utils;
+package dbx.zzzz.controller;
+
+import javax.annotation.security.RolesAllowed;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class IndexController {
 	@GetMapping("/index")
+    @RolesAllowed({"USER","ADMIN"})	
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="www") String name, Model model) {
 		model.addAttribute("name", name);
 		return "static";
